@@ -1,0 +1,8 @@
+const reverseSeq = n => {
+  var foo = [];
+
+  for (var i = n; i > 0; i--) {
+   foo.push(i);
+  }
+ return foo;
+};
