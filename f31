@@ -1,0 +1,9 @@
+function findSquares(x,y){
+  let cubes = 0
+  while(x&&y){
+    cubes+=x*y
+    x--
+    y--
+  }
+  return cubes 
+}
