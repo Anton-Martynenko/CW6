@@ -1,0 +1,8 @@
+function proofread (str) { 
+
+return str.split`. `.map(v => v[0].toUpperCase() + v.slice(1).toLowerCase()).join`. `.replace(/ie/g,'ei');
+
+} 
+
+
+proofread ("ShE deCIeved HiM.");
