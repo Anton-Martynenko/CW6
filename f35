@@ -1,0 +1,3 @@
+function regexTicTacToeWinChecker(board) {
+  return /(\w)(..(\1|.\1.)..\1|.\1.\1..$|\1\1(...)*$)/.test(board)
+}
