@@ -1,0 +1,3 @@
+function lookAndSay(data,len){
+  return Array.from({length:len},(v,i)=>data=data.replace(/(.)\1*/g,m=> m.length+m[0]));
+}
