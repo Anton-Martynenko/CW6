@@ -1,0 +1,3 @@
+function rankings(arr){
+  return arr.map(v => arr.slice().sort((a,b) => b-a).indexOf(v)+1)
+}
