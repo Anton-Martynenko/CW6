@@ -1,0 +1,5 @@
+function shortestStepsToNum(num) {
+  if(num <= 1) return 0;
+  if(num%2 == 1) return 1 + shortestStepsToNum(num -1);
+  return 1 + shortestStepsToNum(num/2);
+}
