@@ -1,0 +1,13 @@
+function findNb(m) {
+    let n = 1
+    let volume = 0
+    while (volume < m) {
+        volume += n**3
+        if (volume == m) {
+            return n
+          }
+        n += 1
+          
+    }
+    return (-1);
+}
