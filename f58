@@ -1,0 +1,21 @@
+function isomorph(a, b) {
+  const dict = {};
+  const dict2 = {};
+  let res1 = true
+  let res2 = true
+  a.split``.map((v,i)=>{
+    if (!dict[v]){
+      dict[v]=b[i]
+    } else {
+      if (dict[v]!=b[i]) res1=false
+    }
+  })
+  b.split``.map((v,i)=>{
+    if (!dict2[v]){
+      dict2[v]=a[i]
+    } else {
+      if (dict2[v]!=a[i]) res2=false
+    }
+  })
+  return res1&&res2
+}
