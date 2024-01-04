@@ -1,0 +1,10 @@
+class OmniBool{
+  constructor(){
+    this.n = false;
+  }
+}
+OmniBool.prototype[Symbol.toPrimitive] = function() { 
+  this.n = !this.n;
+  return this.n;
+};
+const omnibool = new OmniBool();
