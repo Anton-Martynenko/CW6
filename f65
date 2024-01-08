@@ -1,0 +1,7 @@
+function reduceByRules(numbers, rules)
+{let res = rules[0](numbers[0],numbers[1]);  
+  for (let i=2;i<numbers.length;i++){
+    res = rules[(i-1) % rules.length](res,numbers[i])
+  }
+  return res
+}
