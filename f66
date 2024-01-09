@@ -1,0 +1,19 @@
+function numberOfPairs(gloves)
+{
+  let obj = {};
+  for (let el of gloves){
+    if (obj[el]) obj[el]++;
+    else obj[el] = 1;
+    }
+  let pairs = 0;
+  let arr = Object.values(obj);
+  for (let key in arr) {
+    if (arr[key] % 2 === 0) { 
+      pairs += arr[key] / 2;
+    }
+    if (arr[key] % 2 !== 0 && arr[key] > 2) { 
+      pairs += (arr[key] - 1) / 2;
+    }
+  }
+  return pairs;
+}
