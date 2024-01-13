@@ -1,0 +1,8 @@
+function lowestProduct(input) { 
+  let arr=[];
+  if (input.length < 4) return "Number is too small"
+      for (let i = 0; i < input.length - 3; i++) {
+        arr.push(input.slice(i, i + 4).split('').map(a => +a).reduce((a, b) => a * b,1))
+    }
+    return Math.min(...arr);
+}
