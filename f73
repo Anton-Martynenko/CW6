@@ -1,0 +1,28 @@
+function loneliest(str) {
+  str = str.trim();
+  let spaces = new Map();
+  let curLetter = str[0];
+  let spaceCount = 0;
+  let biggestCount = 0;
+  for(c of str)
+  {
+    if(c == ' ')
+    {
+      spaceCount++;
+    }
+    else
+    {
+      let sc = (spaces.has(curLetter)?spaces.get(curLetter):0)+spaceCount;
+      spaces.set(curLetter, sc);
+      if(sc > biggestCount)
+      {
+          biggestCount = sc;
+      }
+      curLetter = c;
+      spaces.set(curLetter, spaceCount);
+      spaceCount = 0;
+    }
+  }
+
+  return [...spaces].filter(sc => sc[1] == biggestCount).map(sc => sc[0]);
+}
