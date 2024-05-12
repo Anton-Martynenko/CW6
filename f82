@@ -1,0 +1,8 @@
+function leaderboardSort(leaderboard, changes) {
+  changes.forEach(change => {
+    let [name, modifier] = change.split(' '), i = leaderboard.findIndex(x => x === name);
+    leaderboard.splice(i, 1);
+    leaderboard.splice(i - modifier, 0, name);
+  });
+  return leaderboard;
+}
