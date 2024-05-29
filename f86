@@ -1,0 +1,12 @@
+function houseOfCards(floors) { 
+  if (floors < 1 || floors !== parseInt(floors))
+    {throw new Error('Error')}
+    
+  let currentFloor = 2; 
+  let result = 2;
+  for (let i = 1; i <= floors; i++) {
+    currentFloor += 3;
+    result += currentFloor;
+  }
+  return result;
+}
