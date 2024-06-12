@@ -1,0 +1,5 @@
+function prod2sum(a, b, c, d) {
+    let [x, y, z, n ] = [b * c - a * d, a * c + b * d, b * d - a * c, a * d + b * c]
+  .map(z => Math.abs(z)).sort((a, b) => a - b);
+  return x === y ? [[x, n]]: [[x, n], [y, z]];
+}
