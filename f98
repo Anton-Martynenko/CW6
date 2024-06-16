@@ -1,0 +1,2 @@
+const u1 = (n, p) => (n + 1) * p;
+const v1 = (n, p) => (2 * n + 1) * p;
