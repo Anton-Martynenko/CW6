@@ -1,0 +1,28 @@
+function convertTemp(temp, from_scale, to_scale){
+  if (from_scale === to_scale) return temp;
+  temp = toCelcius[from_scale](temp);
+  temp = fromCelcius[to_scale](temp);
+  return Math.round(temp);
+}
+
+const toCelcius = {
+  C: function(t) { return t },
+  F: function(t) { return (t - 32) * 5 / 9 },
+  K: function(t) { return t - 273.15 },
+  R: function(t) { return (t - 491.67) * 5 / 9 },
+  De: function(t) { return 100 - t * 2 / 3 },
+  N: function(t) { return t * 100 / 33 },
+  Re: function(t) { return t * 5 / 4 },
+  Ro: function(t) { return (t - 7.5) * 40 / 21 }
+}
+
+const fromCelcius = {
+  C: function(t) { return t },
+  F: function(t) { return t * 9 / 5 + 32 },
+  K: function(t) { return t + 273.15 },
+  R: function(t) { return (t + 273.15) * 9 / 5 },
+  De: function(t) { return (100 - t) * 3 / 2 },
+  N: function(t) { return t * 33 / 100 },
+  Re: function(t) { return t * 4 / 5 },
+  Ro: function(t) { return t * 21 / 40 + 7.5 }
+}
