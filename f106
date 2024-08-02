@@ -1,0 +1,20 @@
+function solve(n) {
+ let count = 0;
+ let increment = 1;
+  
+  let isPrime = num => {
+    for(let i = 2, s = Math.sqrt(num); i <= s; i++) {
+      if(num % i === 0) return false;
+    } return num > 1;
+  }
+    
+  while(count <= n){
+    let arr = increment.toString().split('').map((x) => {return isPrime(parseInt(x))});
+    if(isPrime(increment) === false && arr.includes(true) === false){
+      count++;
+    }
+    increment++;
+  }
+  
+  return increment - 1;
+};
