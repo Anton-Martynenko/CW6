@@ -1,0 +1,8 @@
+function CaesarCryptoEncode(text, shift) {
+  
+  if (!text) return '';
+  shift = (shift % 52 + 52) % 52;
+  let letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  return text.trim().replace(/[a-z]/ig, e => letters[(letters.indexOf(e) + shift) % 52]); 
+  
+}
