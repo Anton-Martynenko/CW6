@@ -1,0 +1,20 @@
+function meeting(x, need){
+  if (need === 0) return 'Game On';
+
+  let chairsNeeded = need;
+  let chairsArray = [];
+
+  for (let i = 0; i < x.length; i++) {
+    let freeChairs = Math.max(x[i][1] - x[i][0].length, 0)
+
+    if (chairsNeeded > freeChairs) {
+      chairsNeeded -= freeChairs;
+      chairsArray.push(freeChairs);
+    } else {
+      chairsArray.push(chairsNeeded);
+      return chairsArray;
+    }
+  }
+
+  return 'Not enough!';
+}
