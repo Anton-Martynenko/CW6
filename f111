@@ -1,0 +1,7 @@
+var greatestDistance = function(data) {
+  let arr = [];
+  for (let i = 0; i < data.length; i++){
+    arr.push(data.lastIndexOf(data[i]) - data.indexOf(data[i]));
+  }
+  return Math.max(...arr);
+};
