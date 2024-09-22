@@ -1,0 +1,6 @@
+function palindromize(number){
+  for (let i = 0; i < 1000; i++){
+    if (number.toString().split``.reverse().join`` === number.toString()) return i + ' ' + number;
+    number+=number.toString().split``.reverse().join`` * 1;
+  }
+}
